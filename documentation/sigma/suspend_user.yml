@@ -1,0 +1,22 @@
+title: Google Workspace - Suspend User
+status: production
+id: 241bf438-24c2-4058-acb5-15bc916e4a2e
+description: Detects when an administrator suspends an user on domain
+date: 2024/03/01
+modified: 2024/03/01
+author: OWN-CERT
+references:
+    - https://developers.google.com/admin-sdk/reports/v1/appendix/activity/admin-user-settings
+tags:
+    - attack.impact
+logsource:
+    product: google_workspace
+    service: google_workspace.admin
+level: medium
+detection:
+    selection:
+        eventName:
+            - SUSPEND_USER
+    condition: selection
+falsepositives:
+    - Legitimate user suspension

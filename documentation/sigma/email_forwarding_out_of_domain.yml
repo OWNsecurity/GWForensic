@@ -1,0 +1,22 @@
+title: Google Workspace - Email Forwarding out of Domain Enable 
+status: production
+id: c02ff8ae-8f65-4f4a-980c-803cba9b31a3
+description: Detects when an user enables email forwarding out of domain.
+date: 2024/03/01
+modified: 2024/03/01
+author: OWN-CERT
+references:
+    - https://developers.google.com/admin-sdk/reports/v1/appendix/activity/user-accounts
+tags:
+    - attack.exfiltration
+logsource:
+    product: google_workspace
+    service: google_workspace.user_accounts
+level: medium
+detection:
+    selection:
+        eventName:
+            - email_forwarding_out_of_domain
+    condition: selection
+falsepositives:
+    - N/A

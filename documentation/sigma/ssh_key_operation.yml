@@ -1,0 +1,25 @@
+title: Google Workspace - SSH key operation on GCP
+status: production
+id: b5f57fb8-2c93-42fc-b444-ffeb49fab496
+description: Detects when operations are made on GCP project concerning SSH key
+date: 2024/03/01
+modified: 2024/03/01
+author: OWN-CERT
+references:
+    - https://developers.google.com/admin-sdk/reports/v1/appendix/activity/gcp
+tags:
+    - attack.persistence
+logsource:
+    product: google_workspace
+    service: google_workspace.gcp
+level: medium
+detection:
+    selection:
+        eventName:
+            - IMPORT_SSH_PUBLIC_KEY
+            - DELETE_SSH_PUBLIC_KEY
+            - GET_SSH_PUBLIC_KEY
+            - UPDATE_SSH_PUBLIC_KEY
+    condition: selection
+falsepositives:
+    - Legitimate operation by administrator

@@ -1,0 +1,22 @@
+title: Google Workspace - Brute Force
+status: production
+id: aadafc86-a66b-4f3f-94dd-870e6114de9d
+description: Detects when brute force attempt is detected on an account
+date: 2024/03/01
+modified: 2024/03/01
+author: OWN-CERT
+references:
+    - https://developers.google.com/admin-sdk/reports/v1/appendix/activity/login
+tags:
+    - attack.credential_access
+logsource:
+    product: google_workspace
+    service: google_workspace.login
+level: medium
+detection:
+    selection:
+        eventName:
+            - login_failure
+    condition: selection
+falsepositives:
+    - User may forgot his password

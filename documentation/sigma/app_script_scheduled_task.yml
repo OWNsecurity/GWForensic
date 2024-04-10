@@ -1,0 +1,22 @@
+title: Google Workspace - App Script scheduled task
+status: production
+id: bf4ae307-16cf-4119-be57-e05f6e250ea3
+description: Detects when a scheduled execution is made on Google App Script
+date: 2024/03/01
+modified: 2024/03/01
+author: OWN-CERT
+references:
+    - https://developers.google.com/admin-sdk/reports/v1/appendix/activity/drive
+tags:
+    - attack.persistence
+logsource:
+    product: google_workspace
+    service: google_workspace.drive
+level: medium
+detection:
+    selection:
+        eventName:
+            - create_script_trigger
+    condition: selection
+falsepositives:
+    - Legitimate script on domain

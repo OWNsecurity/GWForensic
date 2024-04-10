@@ -1,0 +1,24 @@
+title: Google Workspace - Suspicious Admin Operation On Account
+status: production
+id: ff83d563-df18-421a-bd84-d3a2d7910094
+description: Detects when an administrator view temp password, change password or disable 2SV on user account.
+date: 2024/03/01
+modified: 2024/03/01
+author: OWN-CERT
+references:
+    - https://developers.google.com/admin-sdk/reports/v1/appendix/activity/admin-user-settings
+tags:
+    - attack.persistence
+logsource:
+    product: google_workspace
+    service: google_workspace.admin
+level: medium
+detection:
+    selection:
+        eventName:
+            - CHANGE_PASSWORD
+            - VIEW_TEMP_PASSWORD
+            - TURN_OFF_2_STEP_VERIFICATION
+    condition: selection
+falsepositives:
+    - Legitimate administrator operation

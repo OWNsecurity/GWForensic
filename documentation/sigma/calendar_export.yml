@@ -1,0 +1,22 @@
+title: Google Workspace - Calendar export
+status: production
+id: 66aa37eb-65a5-46f1-8ce2-34a629779ba8
+description: Detects when an user exports calendar
+date: 2024/03/01
+modified: 2024/03/01
+author: OWN-CERT
+references:
+    - https://developers.google.com/admin-sdk/reports/v1/appendix/activity/calendar
+tags:
+    - attack.exfiltration
+logsource:
+    product: google_workspace
+    service: google_workspace.calendar
+level: medium
+detection:
+    selection:
+        eventName:
+            - export_calendar
+    condition: selection
+falsepositives:
+    - Legitimate exports for other tools by the user

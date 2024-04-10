@@ -1,0 +1,25 @@
+title: Google Workspace - Security change on Groups
+status: production
+id: 1b97f6da-908f-45d8-a487-54547a1d2629
+description: Detects when operations are made on groups concerning security parameter.
+date: 2024/03/01
+modified: 2024/03/01
+author: OWN-CERT
+references:
+    - https://developers.google.com/admin-sdk/reports/v1/appendix/activity/groups-enterpris
+tags:
+    - attack.defense_evasion
+logsource:
+    product: google_workspace
+    service: google_workspace.groups_enterprise
+level: medium
+detection:
+    selection:
+        eventName:
+            - add_member_role
+            - change_security_setting
+            - change_security_setting_state
+            - remove_security_setting
+    condition: selection
+falsepositives:
+    - Legitimate operation by group administrator

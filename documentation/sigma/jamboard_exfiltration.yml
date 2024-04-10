@@ -1,0 +1,22 @@
+title: Google Workspace - Jamboard Exfiltration
+status: production
+id: ebdbdb2f-bd48-4673-97d0-b3331bac19e1
+description: Detects when an export is made on Jamboard service.
+date: 2024/03/01
+modified: 2024/03/01
+author: OWN-CERT
+references:
+    - https://developers.google.com/admin-sdk/reports/v1/appendix/activity/jamboard
+tags:
+    - attack.exfiltration
+logsource:
+    product: google_workspace
+    service: google_workspace.jamboard
+level: medium
+detection:
+    selection:
+        eventName:
+            - EXPORT_JAMBOARD_FLEET
+    condition: selection
+falsepositives:
+    - Legitimate export

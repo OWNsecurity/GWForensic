@@ -1,0 +1,22 @@
+title: Google Workspace - Create User
+status: production
+id: d2442a33-8807-4aa2-bb66-c50c3a9bbaf0
+description: Detects when an administrator creates a new user on domain
+date: 2024/03/01
+modified: 2024/03/01
+author: OWN-CERT
+references:
+    - https://developers.google.com/admin-sdk/reports/v1/appendix/activity/admin-user-settings
+tags:
+    - attack.persistence
+logsource:
+    product: google_workspace
+    service: google_workspace.admin
+level: medium
+detection:
+    selection:
+        eventName:
+            - CREATE_USER
+    condition: selection
+falsepositives:
+    - Legitimate creation of new user

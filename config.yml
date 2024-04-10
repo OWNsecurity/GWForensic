@@ -1,0 +1,20 @@
+sources:
+  - "all"
+users:
+  - "all"
+date:
+  start: ""
+  end: ""
+export: "csv"
+exportFolder: "./export/"
+timesketch:
+  sketch: 3
+  timestamp_description: "GW Event Log"
+  timeline_name: "gwforensic-export-001" # _source_logs
+opensearch:
+  url: "127.0.0.1"
+  port: 9200
+  user: "admin"
+  password: "admin"
+  index_name: "gwforensic-export-001"
+  

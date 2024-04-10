@@ -1,0 +1,23 @@
+title: Google Workspace - Datastudio Exfiltration
+status: production
+id: f22f1e76-6ecd-42c3-9d83-628ce2d7e685
+description: Detects when an user exports data from Data Studio service
+date: 2024/03/01
+modified: 2024/03/01
+author: OWN-CERT
+references:
+    - https://developers.google.com/admin-sdk/reports/v1/appendix/activity/data-studio
+tags:
+    - attack.exfiltration
+logsource:
+    product: google_workspace
+    service: google_workspace.data_studio
+level: medium
+detection:
+    selection:
+        eventName:
+            - DATA_EXPORT
+            - DOWNLOAD_REPORT
+    condition: selection
+falsepositives:
+    - Legitimate export by user for reporting

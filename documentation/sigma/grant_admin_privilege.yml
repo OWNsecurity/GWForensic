@@ -1,0 +1,23 @@
+title: Google Workspace - Grant Admin Privilege
+status: production
+id: 5e5560ae-7b85-4ac1-8b6a-6d399237c4b6
+description: Detects when an administrator grants admin privilege to an user on domain
+date: 2024/03/01
+modified: 2024/03/01
+author: OWN-CERT
+references:
+    - https://developers.google.com/admin-sdk/reports/v1/appendix/activity/admin-user-settings
+tags:
+    - attack.persistence
+logsource:
+    product: google_workspace
+    service: google_workspace.admin
+level: medium
+detection:
+    selection:
+        eventName:
+            - GRANT_ADMIN_PRIVILEGE
+            - GRANT_DELEGATED_ADMIN_PRIVILEGES
+    condition: selection
+falsepositives:
+    - Legitimate administrator operation

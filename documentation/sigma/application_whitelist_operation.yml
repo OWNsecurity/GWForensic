@@ -1,0 +1,26 @@
+title: Google Workspace - Application Whitelist Operation
+status: production
+id: 3f020920-1001-43da-9d18-ddf2e53d8309
+description: Detects when operations are made on application whitelist by an administrator.
+date: 2024/03/01
+modified: 2024/03/01
+author: OWN-CERT
+references:
+    - https://developers.google.com/admin-sdk/reports/v1/appendix/activity/groups-enterpris
+tags:
+    - attack.persistence
+logsource:
+    product: google_workspace
+    service: google_workspace.admin
+level: medium
+detection:
+    selection:
+        eventName:
+            - MULTIPLE_ADD_TO_TRUSTED_OAUTH2_APPS
+            - REMOVE_FROM_LIMITED_OAUTH2_APPS
+            - REMOVE_FROM_BLOCKED_OAUTH2_APP
+            - ADD_APPLICATION_TO_WHITELIST
+            - ADD_APPLICATION
+    condition: selection
+falsepositives:
+    - Legitimate operation by administrator

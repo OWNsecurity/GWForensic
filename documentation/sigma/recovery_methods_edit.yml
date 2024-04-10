@@ -1,0 +1,24 @@
+title: Google Workspace - Recovery information edit
+status: production
+id: e428c440-a5fd-4da1-aa89-ccb21b556063
+description: Detects when recovery fields are changed by an user.
+date: 2024/03/01
+modified: 2024/03/01
+author: OWN-CERT
+references:
+    - https://developers.google.com/admin-sdk/reports/v1/appendix/activity/user-accounts
+tags:
+    - attack.persistence
+logsource:
+    product: google_workspace
+    service: google_workspace.user_accounts
+level: medium
+detection:
+    selection:
+        eventName:
+            - recovery_email_edit
+            - recovery_phone_edit
+            - recovery_secret_qa_edit 
+    condition: selection
+falsepositives:
+    - Legitimate information rotation by the user in case of personal modification.

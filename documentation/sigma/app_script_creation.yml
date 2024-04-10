@@ -1,0 +1,24 @@
+title: Google Workspace - App Script creation
+status: production
+id: d395ac6c-d4ed-45a6-893e-9e114543c938
+description: Detects when an App Script is created on Drive
+date: 2024/03/01
+modified: 2024/03/01
+author: OWN-CERT
+references:
+    - https://developers.google.com/admin-sdk/reports/v1/appendix/activity/drive
+tags:
+    - attack.execution
+logsource:
+    product: google_workspace
+    service: google_workspace.drive
+level: medium
+detection:
+    selection:
+        eventName:
+            - create
+            - edit
+        doc_type: script
+    condition: selection
+falsepositives:
+    - Legitimate script on domain

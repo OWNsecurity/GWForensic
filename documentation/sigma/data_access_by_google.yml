@@ -1,0 +1,22 @@
+title: Google Workspace - Data Access By Google
+status: production
+id: e672b6aa-afd4-423f-8c38-9c65109fb26e
+description: Detects when Google access to data on Workspace domain (Access Transparency)
+date: 2024/03/01
+modified: 2024/03/01
+author: OWN-CERT
+references:
+    - https://developers.google.com/admin-sdk/reports/v1/appendix/activity/access-transparency
+tags:
+    - attack.exfiltration
+logsource:
+    product: google_workspace
+    service: google_workspace.access_transparency
+level: medium
+detection:
+    selection:
+        eventName:
+            - ACCESS
+    condition: selection
+falsepositives:
+    - Legitimate support by Google

@@ -1,0 +1,22 @@
+title: Google Workspace - 2SV disable
+status: production
+id: 6abdaa91-ceda-47b6-a94a-356b08c1e386
+description: Detects when 2 factor authentication is disabled on an account.
+date: 2024/03/01
+modified: 2024/03/01
+author: OWN-CERT
+references:
+    - https://developers.google.com/admin-sdk/reports/v1/appendix/activity/user-accounts
+tags:
+    - attack.persistence
+logsource:
+    product: google_workspace
+    service: google_workspace.user_accounts
+level: medium
+detection:
+    selection:
+        eventName:
+            - 2sv_disable 
+    condition: selection
+falsepositives:
+    - IT Admin can disable 2SV to help user if there is an issue.

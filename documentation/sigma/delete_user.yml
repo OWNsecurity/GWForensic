@@ -1,0 +1,22 @@
+title: Google Workspace - Delete User
+status: production
+id: 5eb901ce-c4ad-4e94-a897-90632d363292
+description: Detects when an administrator deletes an user on domain
+date: 2024/03/01
+modified: 2024/03/01
+author: OWN-CERT
+references:
+    - https://developers.google.com/admin-sdk/reports/v1/appendix/activity/admin-user-settings
+tags:
+    - attack.impact
+logsource:
+    product: google_workspace
+    service: google_workspace.admin
+level: medium
+detection:
+    selection:
+        eventName:
+            - DELETE_USER
+    condition: selection
+falsepositives:
+    - Legitimate deletion of user

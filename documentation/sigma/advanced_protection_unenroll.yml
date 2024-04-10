@@ -1,0 +1,22 @@
+title: Google Workspace - Advanced Protection Disable
+status: production
+id: e1b59daf-3720-4e60-84bd-5bd0bbacd4f0
+description: Detects when an user disables the advanced protection on account.
+date: 2024/03/01
+modified: 2024/03/01
+author: OWN-CERT
+references:
+    - https://developers.google.com/admin-sdk/reports/v1/appendix/activity/user-accounts
+tags:
+    - attack.defense_evasion
+logsource:
+    product: google_workspace
+    service: google_workspace.user_accounts
+level: medium
+detection:
+    selection:
+        eventName:
+            - titanium_unenroll
+    condition: selection
+falsepositives:
+    - N/A
