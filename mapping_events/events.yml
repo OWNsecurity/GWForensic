@@ -1,0 +1,1336 @@
+eventsList:
+  2sv_disable:
+    source: "user_accounts"
+    description: "An user disables the multifactor authentication"
+    mitre:
+      tactics: "persistence"
+      technique: "Modify Authentication Process"
+      sub_technique: "Multi-Factor Authentication"
+      id: "T1556.006"
+  2sv_enroll:
+    source: "user_accounts"
+    description: "La 2FA a été ajouté sur un compte."
+    mitre:
+      tactics: "Persistence"
+      technique: "Account Manipulation"
+      sub_technique: "Device Registration"
+      id: "T1098.005"
+  password_edit:
+    source: "user_accounts"
+    description: "An user changes password."
+    mitre:
+      tactics: "persistence"
+      technique: "Account Manipulation"
+      sub_technique: "N/A"
+      id: "T1098"
+  recovery_email_edit:
+    source: "user_accounts"
+    description: "Modification de l'adresse e-mail de récupération du compte"
+    mitre:
+      tactics: "persistence"
+      technique: "Account Manipulation"
+      sub_technique: "N/A"
+      id: "T1098"
+  recovery_phone_edit:
+    description: "Modification du numéro de téléphone de récupération du compte"
+    source: "user_accounts"
+    mitre:
+      tactics: "persistence"
+      technique: "Account Manipulation"
+      sub_technique: "N/A"
+      id: "T1098"
+  recovery_secret_qa_edit:
+    description: "Modification de la question/réponse secrète de récupération du compte"
+    source: "user_accounts"
+    mitre:
+      tactics: "persistence"
+      technique: "Account Manipulation"
+      sub_technique: "N/A"
+      id: "T1098"
+
+  titanium_unenroll:
+    description: "Se désinscrire de la Protection Avancée"
+    source: "user_accounts"
+    mitre:
+      tactics: "Defense Evasion"
+      technique: "Impair Defenses"
+      sub_technique: "Disable or Modify Tools"
+      id: "T1562.001"
+
+  email_forwarding_out_of_domain:
+    description: "Transfert des e-mails en dehors du domaine activé"
+    source: "user_accounts"
+    mitre:
+      tactics: "Exfiltration"
+      technique: "Exfiltration Over Web Service"
+      sub_technique: "N/A"
+      id: "T1567"
+
+  login_failure:
+    source: "saml"
+    description: "Échec de la connexion au protocole SAML."
+    mitre:
+      tactics: "Credential Access"
+      technique: "Brute Force"
+      sub_technique: "N/A"
+      id: "T1110"
+
+  authorize:
+    source: "token"
+    description: "Un utilisateur a autorisé l'accès à une application pour ses données."
+    mitre:
+      tactics: "Credential Access"
+      technique: "Steal Application Access Token"
+      sub_technique: "N/A"
+      id: "T1528"
+
+  request:
+    source: "token"
+    description: "Accès demandé aux données de l'utilisateur pour une application."
+    mitre:
+      tactics: "Credential Access"
+      technique: "Steal Application Access Token"
+      sub_technique: "N/A"
+      id: "T1528"
+
+  account_disabled_password_leak:
+    source: "login"
+    description: "account_disabled_password_leak"
+    mitre:
+      tactics: "Defense Evasion"
+      technique: "Impair Defenses"
+      sub_technique: "Disable or Modify Tools"
+      id: "T1562.001"
+
+  suspicious_login:
+    source: "login"
+    description: "Connexion suspecte bloquée"
+    mitre:
+      tactics: "Initial Access"
+      technique: "Valid Accounts"
+      sub_technique: "Cloud Accounts"
+      id: "T1078.004"
+
+  suspicious_login_less_secure_app:
+    source: "login"
+    description: "Connexion suspecte à partir d'une application moins sécurisée bloquée"
+    mitre:
+      tactics: "Credential Access"
+      technique: "Unsecured Credentials"
+      sub_technique: "N/A"
+      id: "T1552"
+
+  suspicious_programmatic_login:
+    source: "login"
+    description: "Connexion programmatique suspecte bloquée"
+    mitre:
+      tactics: "Initial Access"
+      technique: "Valid Accounts"
+      sub_technique: "Cloud Accounts"
+      id: "T1078.004"
+
+  user_signed_out_due_to_suspicious_session_cookie:
+    source: "login"
+    description: "L'utilisateur s'est déconnecté en raison d'un cookie de session suspect (événement de logiciel malveillant lié à un embouteur de cookies)."
+    mitre:
+      tactics: "Initial Access"
+      technique: "Valid Accounts"
+      sub_technique: "Cloud Accounts"
+      id: "T1078.004"
+
+  account_disabled_generic:
+    source: "login"
+    description: "Utilisateur suspendu"
+    mitre:
+      tactics: "Persistence"
+      technique: "Account Manipulation"
+      sub_technique: "N/A"
+      id: "T1098"
+
+  account_disabled_spamming_through_relay:
+    source: "login"
+    description: "L'événement d'avertissement de compte a désactivé le spam via la description de relais."
+    mitre:
+      tactics: "Impact"
+      technique: "Service Stop"
+      sub_technique: "N/A"
+      id: "T1489"
+
+  account_disabled_spamming:
+    source: "login"
+    description: "Description de l'événement d'avertissement lié au compte désactivé pour cause de spam"
+    mitre:
+      tactics: "Impact"
+      technique: "Service Stop"
+      sub_technique: "N/A"
+      id: "T1489"
+
+  account_disabled_hijacked:
+    source: "login"
+    description: "Description de l'événement d'avertissement relatif au compte désactivé pour cause de piratage"
+    mitre:
+      tactics: "Initial Access"
+      technique: "Valid Accounts"
+      sub_technique: "Cloud Accounts"
+      id: "T1078.004"
+
+  gov_attack_warning:
+    source: "login"
+    description: "Attaque de personnes malveillantes soutenues par un gouvernement"
+    mitre:
+      tactics: "Initial Access"
+      technique: "Valid Accounts"
+      sub_technique: "Cloud Accounts"
+      id: "T1078.004"
+
+  blocked_sender:
+    source: "login"
+    description: "Tous les futurs e-mails de l'expéditeur ont été bloqués."
+    mitre:
+      tactics: "Impact"
+      technique: "Service Stop"
+      sub_technique: "N/A"
+      id: "T1489"
+
+  email_forwarding_out_of_domain:
+    source: "login"
+    description: "Transfert des e-mails en dehors du domaine activé"
+    mitre:
+      tactics: "Collection"
+      technique: "Email Collection"
+      sub_technique: "Email Forwarding Rule"
+      id: "T1114.003"
+
+  login_failure:
+    source: "login"
+    description: "Échec de la tentative de connexion."
+    mitre:
+      tactics: "Credential Access"
+      technique: "Brute Force"
+      sub_technique: "Password Guessing"
+      id: "T1110.001"
+
+  risky_sensitive_action_allowed:
+    source: "login"
+    description: "Action sensible autorisée"
+    mitre:
+      tactics: "Initial Access"
+      technique: "Valid Accounts"
+      sub_technique: "Cloud Accounts"
+      id: "T1078.004"
+
+  risky_sensitive_action_blocked:
+    source: "login" 
+    description: "Action sensible bloquée"
+    mitre:
+      tactics: "Initial Access"
+      technique: "Valid Accounts"
+      sub_technique: "Cloud Accounts"
+      id: "T1078.004"
+
+  DEVICE_LICENSE_ENROLLMENT_CHANGE:
+    source: "jamboard"
+    description: "Modification de l'enregistrement de la licence d'appareil"
+    mitre:
+      tactics: "Defense Evasion"
+      technique: "Impair Defenses"
+      sub_technique: "N/A"
+      id: "T1562"
+
+  DEVICE_PROVISIONING_CHANGE:
+    source: "jamboard"
+    description: "Modification de la gestion des appareils"
+    mitre:
+      tactics: "Defense Evasion"
+      technique: "Impair Defenses"
+      sub_technique: "N/A"
+      id: "T1562"
+
+  EXPORT_JAMBOARD_FLEET:
+    source: "jamboard"
+    description: "Événement du journal d'audit déclenché lorsqu'une requête est envoyée pour exporter le parc Jamboard."
+    mitre:
+      tactics: "Exfiltration"
+      technique: "Exfiltration Over Web Service"
+      sub_technique: "N/A"
+      id: "T1567"
+
+  DEVICE_LOGGING_CHANGE:
+    source: "jamboard"
+    description: "Journal d'audit déclenché lorsque Cloud Logging est activé ou désactivé."
+    mitre:
+      tactics: "Defense Evasion"
+      technique: "Impair Defenses"
+      sub_technique: "Disable or Modify Cloud Logs"
+      id: "T1562.008"
+
+  deny_access_request:
+    source: "drive"
+    description: "Une demande d'accès a été refusée."
+    mitre:
+      tactics: "Collection"
+      technique: "Data from Cloud Storage"
+      sub_technique: "N/A"
+      id: "T1530"
+
+  download:
+    source: "drive"
+    description: "Téléchargement du document"
+    mitre:
+      tactics: "Exfiltration"
+      technique: "Exfiltration Over Web Service"
+      sub_technique: "N/A"
+      id: "T1567"
+
+  print:
+    source: "drive"
+    description: "Impression de documents"
+    mitre:
+      tactics: "Exfiltration"
+      technique: "Exfiltration Over Web Service"
+      sub_technique: "N/A"
+      id: "T1567"
+
+  create_script_trigger:
+    source: "drive"
+    description: "Création d'un déclencheur Apps Script."
+    mitre:
+      tactics: "Persistence"
+      technique: "Scheduled Task/Job"
+      sub_technique: "N/A"
+      id: "T1053"
+
+  trash:
+    source: "drive"
+    description: "Corbeille de documents."
+    mitre:
+      tactics: "Defense Evasion"
+      technique: "Indicator Removal"
+      sub_technique: "File Deletion"
+      id: "T1070.004"
+
+  shared_drive_remove_security_update:
+    source: "drive"
+    description: "Suppression groupée de la mise à jour de sécurité."
+    mitre:
+      tactics: "Defense Evasion"
+      technique: "Impair Defenses"
+      sub_technique: "Disable or Modify Tools"
+      id: "T1562.001"
+
+  IMPORT_SSH_PUBLIC_KEY:
+    source: "gcp"
+    description: "L'utilisateur a ajouté une clé publique SSH."
+    mitre:
+      tactics: "Persistence"
+      technique: "Account Manipulation"
+      sub_technique: "SSH Authorized Keys"
+      id: "T1098.004"
+      
+  DELETE_POSIX_ACCOUNT:
+    source: "gcp"
+    description: "L'utilisateur a supprimé un compte POSIX."
+    mitre:
+      tactics: "Persistence"
+      technique: "Account Manipulation"
+      sub_technique: "N/A"
+      id: "T1098"
+
+  DELETE_SSH_PUBLIC_KEY:
+    source: "gcp"
+    description: "L'utilisateur a supprimé une clé publique SSH."
+    mitre:
+      tactics: "Persistence"
+      technique: "Account Manipulation"
+      sub_technique: "SSH Authorized Keys"
+      id: "T1098.004"
+
+  GET_SSH_PUBLIC_KEY:
+    source: "gcp"
+    description: "L'utilisateur a récupéré la clé publique SSH."
+    mitre:
+      tactics: "Persistence"
+      technique: "Account Manipulation"
+      sub_technique: "SSH Authorized Keys"
+      id: "T1098.004"
+
+  UPDATE_SSH_PUBLIC_KEY:
+    source: "gcp"
+    description: "L'utilisateur a mis à jour une clé publique SSH."
+    mitre:
+      tactics: "Persistence"
+      technique: "Account Manipulation"
+      sub_technique: "SSH Authorized Keys"
+      id: "T1098.004"
+
+  export_calendar:
+    source: "calendar"
+    description: "Agenda exporté"
+    mitre:
+      tactics: "Exfiltration"
+      technique: "Exfiltration Over Web Service"
+      sub_technique: "N/A"
+      id: "T1567"
+
+  print_preview_calendar:
+    source: "calendar"
+    description: "Agenda imprimé"
+    mitre:
+      tactics: "Exfiltration"
+      technique: "Exfiltration Over Web Service"
+      sub_technique: "N/A"
+      id: "T1567"
+
+  add_member:
+    source: "groups_enterprise"
+    description: "Membre ajouté à un groupe."
+    mitre:
+      tactics: "Persistence"
+      technique: "Create Account"
+      sub_technique: "Cloud Account"
+      id: "T1136.003"
+
+  add_member_role:
+    source: "groups_enterprise"
+    description: "Le rôle a été ajouté à un membre d'un groupe."
+    mitre:
+      tactics: "Privilege Escalation"
+      technique: "Account Manipulation"
+      sub_technique: "Additional Cloud Roles"
+      id: "T1098.003"
+
+  change_security_setting:
+    source: "groups_enterprise"
+    description: "Le paramètre de sécurité du groupe a été modifié."
+    mitre:
+      tactics: "Defense Evasion"
+      technique: "Impair Defenses"
+      sub_technique: "Disable or Modify Tools"
+      id: "T1562.001"
+
+  change_security_setting_state:
+    source: "groups_enterprise"
+    description: "L'état du paramètre de sécurité du groupe a été modifié."
+    mitre:
+      tactics: "Defense Evasion"
+      technique: "Impair Defenses"
+      sub_technique: "Disable or Modify Tools"
+      id: "T1562.001"
+
+  remove_security_setting:
+    source: "groups_enterprise"
+    description: "Le paramètre de sécurité du groupe a été supprimé."
+    mitre:
+      tactics: "Defense Evasion"
+      technique: "Impair Defenses"
+      sub_technique: "Disable or Modify Tools"
+      id: "T1562.001"
+
+  DEVICE_REGISTER_UNREGISTER_EVENT:
+    source: "mobile"
+    description: "Modification de l'enregistrement du compte"
+    mitre:
+      tactics: "Persistence"
+      technique: "Account Manipulation"
+      sub_technique: "Device Registration"
+      id: "T1098.005"
+
+  DEVICE_ACTION_EVENT:
+    source: "mobile"
+    description: "Événements d'action sur l'appareil (wipe, ring...)."
+    mitre:
+      tactics: "Defense Evasion"
+      technique: "Indicator Removal"
+      sub_technique: "File Deletion"
+      id: "T1070.004"
+
+  DEVICE_SETTINGS_UPDATED_EVENT:
+    source: "mobile"
+    description: "Modification des paramètres de l'appareil"
+    mitre:
+      tactics: "Defense Evasion"
+      technique: "Impair Defenses"
+      sub_technique: "Disable or Modify Tools"
+      id: "T1562.001"
+
+  APPLE_DEP_DEVICE_UPDATE_ON_APPLE_PORTAL_EVENT:
+    source: "mobile"
+    description: "État de l'appareil modifié sur le portail Apple"
+    mitre:
+      tactics: "Defense Evasion"
+      technique: "Impair Defenses"
+      sub_technique: "Disable or Modify Tools"
+      id: "T1562.001"
+
+  RISK_SIGNAL_UPDATED_EVENT:
+    source: "mobile"
+    description: "Modification du signal de risque"
+    mitre:
+      tactics: "Defense Evasion"
+      technique: "Impair Defenses"
+      sub_technique: "Disable or Modify Tools"
+      id: "T1562.001"
+
+  DEVICE_COMPROMISED_EVENT:
+    source: "mobile"
+    description: "Appareil dont la sécurité est compromise."
+    mitre:
+      tactics: "Execution"
+      technique: "N/A"
+      sub_technique: "N/A"
+      id: "TA0002"
+
+  FAILED_PASSWORD_ATTEMPTS_EVENT:
+    source: "mobile"
+    description: "Tentatives de déverrouillage de l'écran infructueuses"
+    mitre:
+      tactics: "Credential Access"
+      technique: "Brute Force"
+      sub_technique: "Password Guessing"
+      id: "T1110.001"
+
+  SUSPICIOUS_ACTIVITY_EVENT:
+    source: "mobile"
+    description: "Activité suspecte sur l'appareil"
+    mitre:
+      tactics: "Execution"
+      technique: "N/A"
+      sub_technique: "N/A"
+      id: "TA0002"
+
+  DATA_EXPORT:
+    source: "data_studio"
+    description: "Nom de l'événement d'exportation des données."
+    mitre:
+      tactics: "Exfiltration"
+      technique: "Exfiltration Over Web Service"
+      sub_technique: "N/A"
+      id: "T1567"
+
+  DOWNLOAD_REPORT:
+    source: "data_studio"
+    description: "Télécharger le nom de l'événement du rapport"
+    mitre:
+      tactics: "Exfiltration"
+      technique: "Exfiltration Over Web Service"
+      sub_technique: "N/A"
+      id: "T1567"
+
+  ACCESS_DENY_EVENT:
+    source: "context_aware_access"
+    description: "Accès refusé suite à une règle d'accès contextuel"
+    mitre:
+      tactics: "Lateral Movement"
+      technique: "Use Alternate Authentication Material"
+      sub_technique: "N/A"
+      id: "T1550"
+
+  CHROME_OS_ADD_USER:
+    source: "chrome"
+    description: "Utilisateur ajouté depuis ChromeOS."
+    mitre:
+      tactics: "Persistence"
+      technique: "Create Account"
+      sub_technique: "Cloud Account"
+      id: "T1136.003"
+
+  CHROME_OS_REMOVE_USER:
+    source: "chrome"
+    description: "Utilisateur supprimé de Chrome OS."
+    mitre:
+      tactics: "Impact"
+      technique: "Account Access Removal"
+      sub_technique: "N/A"
+      id: "T1531"
+
+  DEVICE_BOOT_STATE_CHANGE:
+    source: "chrome"
+    description: "Le mode de démarrage de l'appareil Chrome OS a été modifié."
+    mitre:
+      tactics: "Persistence"
+      technique: "Boot or Logon Autostart Execution"
+      sub_technique: "N/A"
+      id: "T1547"
+
+  CHROME_OS_LOGIN_FAILURE_EVENT:
+    source: "chrome"
+    description: "Nom de l'événement d'échec de connexion à Chrome OS."
+    mitre:
+      tactics: "Initial Access"
+      technique: "Valid Accounts"
+      sub_technique: "Cloud Accounts"
+      id: "T1078.004"
+
+  PASSWORD_CHANGED:
+    source: "chrome"
+    description: "Le mot de passe de la navigation sécurisée dans Chrome a changé le nom de l'événement."
+    mitre:
+      tactics: "persistence"
+      technique: "Account Manipulation"
+      sub_technique: "N/A"
+      id: "T1098"
+
+  PASSWORD_REUSE:
+    source: "chrome"
+    description: "Nom de l'événement de réutilisation de mot de passe de la navigation sécurisée Chrome."
+    mitre:
+      tactics: "persistence"
+      technique: "Account Manipulation"
+      sub_technique: "N/A"
+      id: "T1098"
+
+  DLP_EVENT:
+    source: "chrome"
+    description: "Nom de l'événement DPC de Chrome OS."
+    mitre:
+      tactics: "Exfiltration"
+      technique: "Exfiltration Over Web Service"
+      sub_technique: "N/A"
+      id: "T1567"
+
+  CONTENT_TRANSFER:
+    source: "chrome"
+    description: "Transfert de contenu"
+    mitre:
+      tactics: "Exfiltration"
+      technique: "Exfiltration Over Web Service"
+      sub_technique: "N/A"
+      id: "T1567"
+
+  MALWARE_TRANSFER:
+    source: "chrome"
+    description: "Nom de l'événement de transfert de données sur les logiciels malveillants."
+    mitre:
+      tactics: "Execution"
+      technique: "Command and Scripting Interpreter"
+      sub_technique: "N/A"
+      id: "T1059"
+
+  PASSWORD_BREACH:
+    source: "chrome"
+    description: "Nom de l'événement de violation de mot de passe."
+    mitre:
+      tactics: "Resource Development"
+      technique: "Compromise Accounts"
+      sub_technique: "Cloud Accounts"
+      id: "T1586"
+
+  SENSITIVE_DATA_TRANSFER:
+    source: "chrome"
+    description: "Transfert de données sensibles."
+    mitre:
+      tactics: "Exfiltration"
+      technique: "Exfiltration Over Web Service"
+      sub_technique: "N/A"
+      id: "T1567"
+
+  UNSAFE_SITE_VISIT:
+    source: "chrome"
+    description: "Visite du site non sécurisé."
+    mitre:
+      tactics: "Execution"
+      technique: "User Execution"
+      sub_technique: "Malicious Link"
+      id: "T1204.001"
+
+  ACCESS:
+    source: "access_transparency"
+    description: "Une ressource Google Workspace a été consultée par Google."
+    mitre:
+      tactics: "Exfiltration"
+      technique: "Exfiltration Over Web Service"
+      sub_technique: "N/A"
+      id: "T1567"
+
+  CHANGE_APPLICATION_SETTING:
+    source: "admin"
+    description: "Modification d'un paramètre d'application"
+    mitre:
+      tactics: "Defense Evasion"
+      technique: "Impair Defenses"
+      sub_technique: "Disable or Modify Tools"
+      id: "T1562.001"
+
+  DELETE_APPLICATION_SETTING:
+    source: "admin"
+    description: "Suppression d'un paramètre d'application"
+    mitre:
+      tactics: "Defense Evasion"
+      technique: "Impair Defenses"
+      sub_technique: "Disable or Modify Tools"
+      id: "T1562.001"
+
+  DELETE_MANAGED_CONFIGURATION:
+    source: "admin"
+    description: "La configuration gérée a été supprimée"
+    mitre:
+      tactics: "Defense Evasion"
+      technique: "Impair Defenses"
+      sub_technique: "Disable or Modify Tools"
+      id: "T1562.001"
+
+  UPDATE_MANAGED_CONFIGURATION:
+    source: "admin"
+    description: "La configuration gérée est mise à jour"
+    mitre:
+      tactics: "Defense Evasion"
+      technique: "Impair Defenses"
+      sub_technique: "Disable or Modify Tools"
+      id: "T1562.001"
+
+  CHANGE_CHROME_OS_ANDROID_APPLICATION_SETTING:
+    source: "admin"
+    description: "Modification d'un paramètre d'application Android"
+    mitre:
+      tactics: "Defense Evasion"
+      technique: "Impair Defenses"
+      sub_technique: "Disable or Modify Tools"
+      id: "T1562.001"
+
+  CHANGE_DEVICE_STATE:
+    source: "admin"
+    description: "Événement pour Modifier l'état de l'appareil."
+    mitre:
+      tactics: "Defense Evasion"
+      technique: "Impair Defenses"
+      sub_technique: "Disable or Modify Tools"
+      id: "T1562.001"
+
+  CHANGE_CHROME_OS_APPLICATION_SETTING:
+    source: "admin"
+    description: "Modification d'un paramètre d'application Chrome"
+    mitre:
+      tactics: "Defense Evasion"
+      technique: "Impair Defenses"
+      sub_technique: "Disable or Modify Tools"
+      id: "T1562.001"
+
+  SEND_CHROME_OS_DEVICE_COMMAND:
+    source: "admin"
+    description: "Commande d'appareil Chrome OS"
+    mitre:
+      tactics: "Execution"
+      technique: "Command and Scripting Interpreter"
+      sub_technique: "N/A"
+      id: "T1059"
+
+  CHANGE_CHROME_OS_DEVICE_ANNOTATION:
+    source: "admin"
+    description: "Modification des propriétés des appareils Chrome OS"
+    mitre:
+      tactics: "Defense Evasion"
+      technique: "Impair Defenses"
+      sub_technique: "Disable or Modify Tools"
+      id: "T1562.001"
+
+  CHANGE_CHROME_OS_DEVICE_SETTING:
+    source: "admin"
+    description: "Modification d'un paramètre d'appareil Chrome OS"
+    mitre:
+      tactics: "Defense Evasion"
+      technique: "Impair Defenses"
+      sub_technique: "Disable or Modify Tools"
+      id: "T1562.001"
+
+  CHANGE_CHROME_OS_DEVICE_STATE:
+    source: "admin"
+    description: "Changement d'état d'un appareil Chrome OS"
+    mitre:
+      tactics: "Defense Evasion"
+      technique: "Impair Defenses"
+      sub_technique: "Disable or Modify Tools"
+      id: "T1562.001"
+
+  DELETE_CHROME_OS_DEVICE:
+    source: "admin"
+    description: "Événement pour supprimer l'appareil ChromeOS."
+    mitre:
+      tactics: "Impact"
+      technique: "Data Destruction"
+      sub_technique: "N/A"
+      id: "T1485"
+
+  REMOVE_CHROME_OS_APPLICATION_SETTING:
+    source: "admin"
+    description: "Supprimer le paramètre de l'application"
+    mitre:
+      tactics: "Defense Evasion"
+      technique: "Impair Defenses"
+      sub_technique: "Disable or Modify Tools"
+      id: "T1562.001"
+
+  REMOVE_CHROME_OS_APPLICATION_SETTINGS:
+    source: "admin"
+    description: "Supprimer les paramètres de l'application Chrome"
+    mitre:
+      tactics: "Defense Evasion"
+      technique: "Impair Defenses"
+      sub_technique: "Disable or Modify Tools"
+      id: "T1562.001"
+
+  ASSIGN_ROLE:
+    source: "admin"
+    description: "Attribution de rôle"
+    mitre:
+      tactics: "Privilege Escalation"
+      technique: "Account Manipulation"
+      sub_technique: "Additional Cloud Credentials"
+      id: "T1098.001"
+
+  CREATE_ROLE:
+    source: "admin"
+    description: "Création de rôle"
+    mitre:
+      tactics: "Persistence"
+      technique: "Create Account"
+      sub_technique: "Cloud Account"
+      id: "T1136.003"
+
+  DELETE_ROLE:
+    source: "admin"
+    description: "Suppression de rôle"
+    mitre:
+      tactics: "Impact"
+      technique: "Account Access Removal"
+      sub_technique: "/"
+      id: "T1531"
+
+  ADD_PRIVILEGE:
+    source: "admin"
+    description: "Création de droits liés au rôle"
+    mitre:
+      tactics: "Privilege Escalation"
+      technique: "Account Manipulation"
+      sub_technique: "Additional Cloud Credentials"
+      id: "T1098.001"
+
+  REMOVE_PRIVILEGE:
+    source: "admin"
+    description: "Suppression d'un droit lié à un rôle"
+    mitre:
+      tactics: "Impact"
+      technique: "Account Access Removal"
+      sub_technique: "/"
+      id: "T1531"
+
+  CHANGE_ACCOUNT_AUTO_RENEWAL:
+    source: "admin"
+    description: "Modification du renouvellement automatique du compte"
+    mitre:
+      tactics: "Defense Evasion"
+      technique: "Impair Defenses"
+      sub_technique: "Disable or Modify Tools"
+      id: "T1562.001"
+
+  ADD_APPLICATION:
+    source: "admin"
+    description: "Ajouter une application"
+    mitre:
+      tactics: "Lateral Movement"
+      technique: "Remote Services"
+      sub_technique: "Cloud Services"
+      id: "T1021.007"
+
+  ADD_APPLICATION_TO_WHITELIST:
+    source: "admin"
+    description: "Ajouter l'application à la liste blanche"
+    mitre:
+      tactics: "Lateral Movement"
+      technique: "Remote Services"
+      sub_technique: "Cloud Services"
+      id: "T1021.007"
+
+  DELETE_ALERT:
+    source: "admin"
+    description: "Suppression d'une alerte"
+    mitre:
+      tactics: "Defense Evasion"
+      technique: "Impair Defenses"
+      sub_technique: "Disable or Modify Tools"
+      id: "T1562.001"
+
+  TOGGLE_ALLOW_ADMIN_PASSWORD_RESET:
+    source: "admin"
+    description: "Autoriser la réinitialisation du mot de passe administrateur"
+    mitre:
+      tactics: "persistence"
+      technique: "Account Manipulation"
+      sub_technique: "N/A"
+      id: "T1098"
+
+  ENABLE_API_ACCESS:
+    source: "admin"
+    description: "Modification de l'accès aux API"
+    mitre:
+      tactics: "Defense Evasion"
+      technique: "Impair Defenses"
+      sub_technique: "Disable or Modify Tools"
+      id: "T1562.001"
+
+  AUTHORIZE_API_CLIENT_ACCESS:
+    source: "admin"
+    description: "Autorisation d'accès au client API"
+    mitre:
+      tactics: "Defense Evasion"
+      technique: "Impair Defenses"
+      sub_technique: "Disable or Modify Tools"
+      id: "T1562.001"
+
+  CHANGE_WHITELIST_SETTING:
+    source: "admin"
+    description: "Modification du paramètre de liste blanche"
+    mitre:
+      tactics: "Defense Evasion"
+      technique: "Impair Defenses"
+      sub_technique: "Disable or Modify Tools"
+      id: "T1562.001"
+
+  CREATE_PLAY_FOR_WORK_TOKEN:
+    source: "admin"
+    description: "Créer un jeton d'inscription du fournisseur de services de gestion des appareils mobiles"
+    mitre:
+      tactics: "Persistence"
+      technique: "Account Manipulation"
+      sub_technique: "Device Registration"
+      id: "T1098.005"
+
+  DELETE_PLAY_FOR_WORK_TOKEN:
+    source: "admin"
+    description: "Supprimer le jeton d'inscription du fournisseur de services de gestion des appareils mobiles"
+    mitre:
+      tactics: "Persistence"
+      technique: "Account Manipulation"
+      sub_technique: "Device Registration"
+      id: "T1098.005"
+
+  ADD_TRUSTED_DOMAINS:
+    source: "admin"
+    description: "Domaines ajoutés aux domaines de confiance"
+    mitre:
+      tactics: "Defense Evasion"
+      technique: "Impair Defenses"
+      sub_technique: "Disable or Modify Tools"
+      id: "T1562.001"
+
+  TOGGLE_SSO_ENABLED:
+    source: "admin"
+    description: "Activer la modification de l'authentification unique"
+    mitre:
+      tactics: " Credential Access"
+      technique: "Modify Authentication Process"
+      sub_technique: "N/A"
+      id: "T1556"
+      
+  PLAY_FOR_WORK_UNENROLL:
+    source: "admin"
+    description: "Désinscription du fournisseur de services de gestion des appareils mobiles"
+    mitre:
+      tactics: "Persistence"
+      technique: "Account Manipulation"
+      sub_technique: "Device Registration"
+      id: "T1098.005"
+
+  UPDATE_DOMAIN_PRIMARY_ADMIN_EMAIL:
+    source: "admin"
+    description: "Modification de l'administrateur principal"
+    mitre:
+      tactics: "Defense Evasion"
+      technique: "Impair Defenses"
+      sub_technique: "Disable or Modify Tools"
+      id: "T1562.001"
+
+  DROP_FROM_QUARANTINE:
+    source: "admin"
+    description: "Message a été retiré de la zone de quarantaine."
+    mitre:
+      tactics: "Lateral Movement"
+      technique: "Internal Spearphishing"
+      sub_technique: "N/A"
+      id: "T1534"
+
+  CHANGE_GMAIL_SETTING:
+    source: "admin"
+    description: "Modification d'un paramètre Gmail"
+    mitre:
+      tactics: "Defense Evasion"
+      technique: "Impair Defenses"
+      sub_technique: "Disable or Modify Tools"
+      id: "T1562.001"
+
+  CREATE_GMAIL_SETTING:
+    source: "admin"
+    description: "Création d'un paramètre Gmail"
+    mitre:
+      tactics: "Defense Evasion"
+      technique: "Impair Defenses"
+      sub_technique: "Disable or Modify Tools"
+      id: "T1562.001"
+
+  DELETE_GMAIL_SETTING:
+    source: "admin"
+    description: "Suppression d'un paramètre Gmail"
+    mitre:
+      tactics: "Defense Evasion"
+      technique: "Impair Defenses"
+      sub_technique: "Disable or Modify Tools"
+      id: "T1562.001"
+
+  REJECT_FROM_QUARANTINE:
+    source: "admin"
+    description: "Message a été rejeté."
+    mitre:
+      tactics: "Lateral Movement"
+      technique: "Internal Spearphishing"
+      sub_technique: "N/A"
+      id: "T1534"
+
+  RELEASE_FROM_QUARANTINE:
+    source: "admin"
+    description: "Message a été retiré de la zone de quarantaine."
+    mitre:
+      tactics: "Lateral Movement"
+      technique: "Internal Spearphishing"
+      sub_technique: "N/A"
+      id: "T1534"
+
+  GROUP_MEMBERS_DOWNLOAD:
+    source: "admin"
+    description: "Téléchargement des membres du groupe en CSV"
+    mitre:
+      tactics: "Exfiltration"
+      technique: "Exfiltration Over Web Service"
+      sub_technique: "N/A"
+      id: "T1567"
+
+  ORG_LICENSE_REVOKE:
+    source: "admin"
+    description: "Retirer des licences à tous les utilisateurs"
+    mitre:
+      tactics: "Impact"
+      technique: "Account Access Removal"
+      sub_technique: "N/A"
+      id: "T1531"
+
+  USER_LICENSE_REVOKE:
+    source: "admin"
+    description: "Révoquer la licence utilisateur"
+    mitre:
+      tactics: "Impact"
+      technique: "Account Access Removal"
+      sub_technique: "N/A"
+      id: "T1531"
+
+  CHROME_APP_USER_LICENSE_REVOKED:
+    source: "admin"
+    description: "La licence utilisateur a été révoquée"
+    mitre:
+      tactics: "Impact"
+      technique: "Account Access Removal"
+      sub_technique: "N/A"
+      id: "T1531"
+
+  ADD_MOBILE_CERTIFICATE:
+    source: "admin"
+    description: "Ajouter un certificat de mobile"
+    mitre:
+      tactics: "Credential Access"
+      technique: "Steal or Forge Authentication Certificates"
+      sub_technique: "N/A"
+      id: "T1649"
+
+  COMPANY_OWNED_DEVICE_BLOCKED:
+    source: "admin"
+    description: "Appareil détenu par l'entreprise bloqué"
+    mitre:
+      tactics: "Impact"
+      technique: "Data Destruction"
+      sub_technique: "N/A"
+      id: "T1485"
+
+  COMPANY_DEVICE_DELETION:
+    source: "admin"
+    description: "Appareil détenu par l'entreprise supprimé"
+    mitre:
+      tactics: "Impact"
+      technique: "Data Destruction"
+      sub_technique: "N/A"
+      id: "T1485"
+
+  COMPANY_OWNED_DEVICE_WIPED:
+    source: "admin"
+    description: "Données de l'appareil détenu par l'entreprise effacées"
+    mitre:
+      tactics: "Impact"
+      technique: "Data Destruction"
+      sub_technique: "N/A"
+      id: "T1485"
+
+  CUSTOMER_USER_DEVICE_DELETION_EVENT:
+    source: "admin"
+    description: "Appareil de l'utilisateur du client supprimé"
+    mitre:
+      tactics: "Impact"
+      technique: "Data Destruction"
+      sub_technique: "N/A"
+      id: "T1485"
+
+  CHANGE_MOBILE_APPLICATION_PERMISSION_GRANT:
+    source: "admin"
+    description: "Modification de l'autorisation d'accès des applications mobiles."
+    mitre:
+      tactics: "Defense Evasion"
+      technique: "Impair Defenses"
+      sub_technique: "Disable or Modify Tools"
+      id: "T1562.001"
+
+  CHANGE_MOBILE_APPLICATION_SETTINGS:
+    source: "admin"
+    description: "Modification des paramètres d'une application mobile"
+    mitre:
+      tactics: "Defense Evasion"
+      technique: "Impair Defenses"
+      sub_technique: "Disable or Modify Tools"
+      id: "T1562.001"
+    
+  ADD_MOBILE_APPLICATION_TO_WHITELIST:
+    source: "admin"
+    description: "L'application mobile a été ajoutée à la liste blanche."
+    mitre:
+      tactics: "Lateral Movement"
+      technique: "Software Deployment Tools"
+      sub_technique: "N/A"
+      id: "T1072"
+
+  MOBILE_DEVICE_BLOCK:
+    source: "admin"
+    description: "Blocage d'appareil mobile"
+    mitre:
+      tactics: "Impact"
+      technique: "Account Access Removal"
+      sub_technique: "N/A"
+      id: "T1531"
+
+  MOBILE_DEVICE_DELETE:
+    source: "admin"
+    description: "Suppression d'appareil mobile"
+    mitre:
+      tactics: "Impact"
+      technique: "Data Destruction"
+      sub_technique: "N/A"
+      id: "T1485"
+
+  MOBILE_DEVICE_WIPE:
+    source: "admin"
+    description: "Effacement des données de l'appareil mobile"
+    mitre:
+      tactics: "Impact"
+      technique: "Data Destruction"
+      sub_technique: "N/A"
+      id: "T1485"
+
+  CHANGE_MOBILE_SETTING:
+    source: "admin"
+    description: "Modification de paramètre pour mobile"
+    mitre:
+      tactics: "Defense Evasion"
+      technique: "Impair Defenses"
+      sub_technique: "Disable or Modify Tools"
+      id: "T1562.001"
+
+  REMOVE_MOBILE_CERTIFICATE:
+    source: "admin"
+    description: "Supprimer le certificat de mobile"
+    mitre:
+      tactics: "Defense Evasion"
+      technique: "Impair Defenses"
+      sub_technique: "Disable or Modify Tools"
+      id: "T1562.001"
+
+  MOBILE_ACCOUNT_WIPE:
+    source: "admin"
+    description: "Effacer les données du compte mobile"
+    mitre:
+      tactics: "Impact"
+      technique: "Data Destruction"
+      sub_technique: "N/A"
+      id: "T1485"
+
+  REMOVE_ORG_UNIT:
+    source: "admin"
+    description: "Suppression d'unité organisationnelle"
+    mitre:
+      tactics: "Impact"
+      technique: "Data Destruction"
+      sub_technique: "N/A"
+      id: "T1485"
+
+  Modification du service:
+    source: "admin"
+    description: "Modification du service"
+    mitre:
+      tactics: "Defense Evasion"
+      technique: "Impair Defenses"
+      sub_technique: "Disable or Modify Tools"
+      id: "T1562.001"
+
+  CHANGE_CAA_APP_ASSIGNMENTS:
+    source: "admin"
+    description: "(Accès contextuel) Modification du niveau d'accès à une application"
+    mitre:
+      tactics: "Defense Evasion"
+      technique: "Impair Defenses"
+      sub_technique: "Disable or Modify Tools"
+      id: "T1562.001"
+
+  ADD_TO_LIMITED_OAUTH2_APPS:
+    source: "admin"
+    description: "Application ajoutée à la liste limitée"
+    mitre:
+      tactics: "Lateral Movement"
+      technique: "Software Deployment Tools"
+      sub_technique: "N/A"
+      id: "T1072"
+
+  REMOVE_FROM_BLOCKED_OAUTH2_APP:
+    source: "admin"
+    description: "Application supprimée de la liste des applications bloquées"
+    mitre:
+      tactics: "Defense Evasion"
+      technique: "Impair Defenses"
+      sub_technique: "Disable or Modify Tools"
+      id: "T1562.001"
+
+  REMOVE_FROM_LIMITED_OAUTH2_APPS:
+    source: "admin"
+    description: "Application supprimée de la liste limitée"
+    mitre:
+      tactics: "Defense Evasion"
+      technique: "Impair Defenses"
+      sub_technique: "Disable or Modify Tools"
+      id: "T1562.001"
+
+  MULTIPLE_ADD_TO_TRUSTED_OAUTH2_APPS:
+    source: "admin"
+    description: "Applications ajoutées à la liste des applications de confiance"
+    mitre:
+      tactics: "Lateral Movement"
+      technique: "Software Deployment Tools"
+      sub_technique: "N/A"
+      id: "T1072"
+
+  WEAK_PROGRAMMATIC_LOGIN_SETTINGS_CHANGED:
+    source: "admin"
+    description: "Le paramètre Accès à des applications moins sécurisées a été modifié."
+    mitre:
+      tactics: "Defense Evasion"
+      technique: "Impair Defenses"
+      sub_technique: "Disable or Modify Tools"
+      id: "T1562.001"
+
+  DELETE_2SV_SCRATCH_CODES:
+    source: "admin"
+    description: "Suppression de codes de validation en deux étapes"
+    mitre:
+      tactics: "Defense Evasion"
+      technique: "Impair Defenses"
+      sub_technique: "Disable or Modify Tools"
+      id: "T1562.001"
+
+  GRANT_ADMIN_PRIVILEGE:
+    source: "admin"
+    description: "Octroi de droits d'administrateur"
+    mitre:
+      tactics: "Privilege Escalation"
+      technique: "Valid Accounts"
+      sub_technique: "Cloud Accounts"
+      id: "T1078.004"
+
+  ENABLE_USER_IP_WHITELIST:
+    source: "admin"
+    description: "Modifier la liste blanche d'adresses IP"
+    mitre:
+      tactics: "Defense Evasion"
+      technique: "Impair Defenses"
+      sub_technique: "Disable or Modify Tools"
+      id: "T1562.001"
+
+  GRANT_DELEGATED_ADMIN_PRIVILEGES:
+    source: "admin"
+    description: "Octroi de droits d'administrateur délégué"
+    mitre:
+      tactics: "Privilege Escalation"
+      technique: "Valid Accounts"
+      sub_technique: "Cloud Accounts"
+      id: "T1078.004"
+
+  MAIL_ROUTING_DESTINATION_ADDED:
+    source: "admin"
+    description: "Création d'une destination de routage des e-mails"
+    mitre:
+      tactics: "Exfiltration"
+      technique: "Exfiltration Over Web Service"
+      sub_technique: "N/A"
+      id: "T1567"
+
+  CHANGE_PASSWORD:
+    source: "admin"
+    description: "Modification du mot de passe"
+    mitre:
+      tactics: "Privilege Escalation"
+      technique: "Valid Accounts"
+      sub_technique: "Cloud Accounts"
+      id: "T1078.004"
+
+  VIEW_TEMP_PASSWORD:
+    source: "admin"
+    description: "Affichage de mot de passe temporaire"
+    mitre:
+      tactics: "Privilege Escalation"
+      technique: "Valid Accounts"
+      sub_technique: "Cloud Accounts"
+      id: "T1078.004"
+
+  TURN_OFF_2_STEP_VERIFICATION:
+    source: "admin"
+    description: "Désactiver la validation en deux étapes"
+    mitre:
+      tactics: "Defense Evasion"
+      technique: "Impair Defenses"
+      sub_technique: "Disable or Modify Tools"
+      id: "T1562.001"
+
+  CREATE_USER:
+    source: "admin"
+    description: "Création de compte utilisateur"
+    mitre:
+      tactics: "Persistence"
+      technique: "Create Account"
+      sub_technique: "Cloud Account"
+      id: "T1136.003"
+
+  DELETE_USER:
+    source: "admin"
+    description: "Suppression de compte utilisateur"
+    mitre:
+      tactics: "Impact"
+      technique: "Account Access Removal"
+      sub_technique: "/"
+      id: "T1531"
+
+  DOWNLOAD_USERLIST_CSV:
+    source: "admin"
+    description: "Téléchargement de la liste d'utilisateurs"
+    mitre:
+      tactics: "Exfiltration"
+      technique: "Exfiltration Over Web Service"
+      sub_technique: "N/A"
+      id: "T1567"
+
+  SUSPEND_USER:
+    source: "admin"
+    description: "Suspension du compte utilisateur"
+    mitre:
+      tactics: "Impact"
+      technique: "Account Access Removal"
+      sub_technique: "/"
+      id: "T1531"
